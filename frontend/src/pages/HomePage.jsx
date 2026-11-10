@@ -13,7 +13,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const response = await fetch("http://localhost:5001/api/notes");
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/notes`);
         if (response.status === 429) {
           setIsRateLimited(true);
           return;

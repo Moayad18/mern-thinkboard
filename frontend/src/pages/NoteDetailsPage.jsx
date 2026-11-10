@@ -14,7 +14,7 @@ const NoteDetailsPage = () => {
   useEffect(() => {
     const fetchNote = async () => {
       try {
-        const response = await fetch(`http://localhost:5001/api/notes/${id}`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/notes/${id}`);
         const data = await response.json();
         setnote(data);
       } catch (error) {
@@ -30,7 +30,7 @@ const NoteDetailsPage = () => {
   const handleDelete = async () => {
     if (!confirm("Are you sure you want delete this note")) return;
     try {
-      await fetch(`http://localhost:5001/api/notes/${note._id}`, { method: "DELETE" });
+      await fetch(`${import.meta.env.VITE_API_URL}/api/notes/${note._id}`, { method: "DELETE" });
       toast.success("Note Deleted");
       navigate("/");
     } catch (error) {
@@ -47,7 +47,7 @@ const NoteDetailsPage = () => {
     setSaving(true);
 
     try {
-      await fetch(`http://localhost:5001/api/notes/${note._id}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/notes/${note._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, content }),

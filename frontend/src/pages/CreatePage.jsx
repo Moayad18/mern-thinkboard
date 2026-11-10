@@ -16,7 +16,7 @@ const CreatePage = () => {
     setLoading(true);
 
     try {
-      await fetch("http://localhost:5001/api/notes", {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/notes`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, content }),

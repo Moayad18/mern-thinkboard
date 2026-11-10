@@ -10,7 +10,7 @@ const NoteCard = ({ note }) => {
     e.preventDefault();
     if (!confirm("Are you sure you want delete this note")) return;
     try {
-      const response = await fetch(`http://localhost:5001/api/notes/${note._id}`, { method: "DELETE" });
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/notes/${note._id}`, { method: "DELETE" });
       if (response.ok) {
         toast.success("Note is deleted");
       }
