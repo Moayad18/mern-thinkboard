@@ -2,5 +2,27 @@
   "dependencies": {
     "react-hot-toast": "^2.6.1",
     "react-router": "^7.18.5"
-  }
+  },
+  "name": "mern-thinkboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build:backend": "npm install --prefix backend",
+    "build:frontend": "npm install --prefix frontend && npm run build --prefix frontend",
+    "build": "npm run build:backend && npm run build:frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moayad18/mern-thinkboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moayad18/mern-thinkboard/issues"
+  },
+  "homepage": "https://github.com/Moayad18/mern-thinkboard#readme"
 }
